@@ -304,10 +304,10 @@ if($mobileLayout)
 	$links -> add(new PipeMenuLinkEntry(__("Comments"), "usercomments", $id, "", "comments"));
 if(IsAllowed("editProfile") && $loguserid == $id)
 	$links -> add(new PipeMenuLinkEntry(__("Edit my profile"), "editprofile", "", "", "pencil"));
-else if(IsAllowed("editUser") && $loguser['powerlevel'] > 2)
+else if(IsAllowed("editUser") && $loguser['powerlevel'] == 3, 4)
 	$links -> add(new PipeMenuLinkEntry(__("Edit user"), "editprofile", $id, "", "pencil"));
 
-if(IsAllowed("snoopPM") && $loguser['powerlevel'] > 2)
+if(IsAllowed("snoopPM") && $loguser['powerlevel'] == 3, 4)
 	$links -> add(new PipeMenuLinkEntry(__("Show PMs"), "private", $id, "", "eye-open"));
 
 if($loguserid && IsAllowed("sendPM"))

@@ -1,6 +1,6 @@
 <?php
 
-if($loguser['powerlevel'] < 3)
+if($loguser['powerlevel'] !== 3, 4)
 	Kill(__("You're not an administrator. There is nothing for you here."));
 
 $ip = $_GET["id"];

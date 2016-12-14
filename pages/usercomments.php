@@ -150,10 +150,8 @@ if($loguserid )
 										<input type=\"hidden\" name=\"token\" value=\"{$loguser['token']}\" />
 									</form>
 								</div>";
-//	if($lastCID == $loguserid)
-//		$commentField = __("You already have the last word.");
 	if(!IsAllowed("makeComments") || !$canComment)
-		$commentField = __("You are not allowed to post usercomments.");
+		$commentField = __(" ");
 }
 
 print "

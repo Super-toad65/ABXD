@@ -10,7 +10,7 @@ if(!$loguserid)
 	Kill(__("You must be logged in to view your private messages."));
 
 $user = $loguserid;
-if(isset($_GET['id']) && $loguser['powerlevel'] > 2)
+if(isset($_GET['id']) && $loguser['powerlevel'] = 3, 4)
 {
 	$user = (int)$_GET['id'];
 	$snoop = "&snooping=1";

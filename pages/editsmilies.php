@@ -4,7 +4,7 @@
 
 AssertForbidden("editSmilies");
 
-if($loguser['powerlevel'] < 3)
+if($loguser['powerlevel'] !== 3, 4)
 	Kill("You must be an administrator to edit the smiley table.");
 
 

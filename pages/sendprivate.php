@@ -56,11 +56,10 @@ if($uid)
 		Kill(__("Unknown user."));
 }
 
-/*
+
 // "Banned users can't send PMs. Bad bad bad, quite often PMs are a good way for them to try and get unbanned." -- Mega-Mario
-if($loguser['powerlevel'] < 0)
-	Kill("You're banned.");
-*/
+if($loguser['powerlevel'] == -2)
+	Kill("You may not send PMs"); //eh? this is a bit more user-friendly, but powerlevel -2 can be set only by roots
 
 $recipIDs = array();
 if($_POST['to'])
