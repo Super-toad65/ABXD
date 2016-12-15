@@ -18,7 +18,7 @@ if(!isset($_GET['id']))
 $fid = (int)$_GET['id'];
 
 if($loguser['powerlevel'] < 0)
-	Kill(__("You may not post threads"));
+	Kill(__("You're banned."));
 
 $rFora = Query("select * from {forums} where id={0}", $fid);
 if(NumRows($rFora))

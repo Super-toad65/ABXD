@@ -5,7 +5,7 @@
 
 $title = __("Edit forums");
 
-if ($loguser['powerlevel'] !== 3, 4) Kill(__("You're not allowed to access the forum editor."));
+if ($loguser['powerlevel'] < 3) Kill(__("You're not allowed to access the forum editor."));
 
 $crumbs = new PipeMenu();
 $crumbs->add(new PipeMenuLinkEntry(__("Admin"), "admin"));

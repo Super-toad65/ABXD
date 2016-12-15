@@ -17,7 +17,7 @@ $pmid = $id;
 
 if(isset($_GET['snooping']))
 {
-	if($loguser['powerlevel'] == 3, 4)
+	if($loguser['powerlevel'] > 2)
 		$rPM = Query("select * from {pmsgs} left join {pmsgs_text} on pid = {pmsgs}.id where {pmsgs}.id = {0}", $id);
 	else
 		Kill(__("No snooping for you."));
@@ -131,8 +131,8 @@ if($draftEditor)
 					$id = $user['id'];
 					if($firstTo == -1)
 						$firstTo = $id;
-					/*if($id == $loguserid)
-						$errors .= __("You can't send private messages to yourself.")."<br />";*/ //no, no no. This can be useful -.-
+					if($id == $loguserid)
+						$errors .= __("You can't send private messages to yourself.")."<br />";
 					else if(!in_array($id, $recipIDs))
 						$recipIDs[] = $id;
 				}

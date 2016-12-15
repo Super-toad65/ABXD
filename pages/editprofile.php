@@ -5,7 +5,7 @@ if(!$loguserid)
 	Kill(__("You must be logged in to edit your profile."));
 
 if ($loguser['powerlevel'] < 0)
-	Kill(__("You may not edit your profile."));
+	Kill(__("Banned users may not edit their profile."));
 
 if (isset($_POST['action']) && $loguser['token'] != $_POST['key'])
 	Kill(__("No."));

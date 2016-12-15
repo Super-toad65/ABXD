@@ -1,7 +1,6 @@
 <?php
 //  AcmlmBoard XD - User account registration page
 //  Access: any, but meant for guests.
-// Ugh. Making it secure and stuff
 $crumbs = new PipeMenu();
 $crumbs->add(new PipeMenuLinkEntry(__("Register"), "register"));
 makeBreadcrumbs($crumbs);
@@ -169,13 +168,11 @@ if(isset($_POST['name']))
 		$ipKnown = 0;
 	if($uname == $cname)
 		$err = __("This user name is already taken. Please choose another.");
-	else if($email == "" || $cemail == "")
-		$err = __("Please enter an E-mail address.");
 	else if($name == "" || $cname == "")
 		$err = __("The user name must not be empty. Please choose one.");
 	else if(strpos($name, ";") !== false)
 		$err = __("The user name cannot contain semicolons.");
-	elseif($ipKnown >= 1)
+	elseif($ipKnown >= 3)
 		$err = __("Another user is already using this IP address.");
 	else if ($_POST['pass'] !== $_POST['pass2'])
 		$err = __("The passwords you entered don't match.");
