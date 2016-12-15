@@ -103,9 +103,9 @@ if($thread['closed'])
 $links = new PipeMenu();
 if($loguserid)
 {
-	if($loguser['powerlevel'] == -1, -2)
-		$links -> add(new PipeMenuTextEntry(__(""))); // lolderp empty space. Who actually is the diot who made that dumb message?
-	else if(IsAllowed("makeReply", $tid) && (!$thread['closed'] || $loguser['powerlevel'] == 2, 3, 4))
+	if($loguser['powerlevel'] < 0)
+		$links -> add(new PipeMenuTextEntry(__("You're banned.")));
+	else if(IsAllowed("makeReply", $tid) && (!$thread['closed'] || $loguser['powerlevel'] > 2))
 		$links -> add(new PipeMenuLinkEntry(__("Post reply"), "newreply", $tid, "", "comment"));
 	else if(IsAllowed("makeReply", $tid))
 		$links -> add(new PipeMenuTextEntry(__("Thread closed.")));

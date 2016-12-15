@@ -6,7 +6,7 @@ $title = __("IP bans");
 
 AssertForbidden("editIPBans");
 
-if($loguser['powerlevel'] !== 3, 4)
+if($loguser['powerlevel'] < 3)
 	Kill(__("Only administrators get to manage IP bans."));
 
 $crumbs = new PipeMenu();

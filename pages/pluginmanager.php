@@ -4,7 +4,7 @@ $title = "Plugin Manager";
 
 AssertForbidden("managePlugins");
 
-if($loguser['powerlevel'] != 3, 4)
+if($loguser['powerlevel'] < 3)
 	Kill(__("You must be an administrator to manage plugins."));
 
 $crumbs = new PipeMenu();
